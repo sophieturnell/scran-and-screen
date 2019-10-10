@@ -11,12 +11,7 @@ class Home extends React.Component {
     this.state = {
       query: '',
 
-      data: {
-        entity_type: '',
-        entity_id: '',
-        title: '',
-        country_name: ''
-      },
+      data: null,
 
       errors: {}
     } 
@@ -28,7 +23,13 @@ class Home extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    console.log(e.target.value)
+    // console.log( this.state.query )
+    axios.get('https://developers.zomato.com/api/v2.1/locations?query=%20Liverpool&count=10', {
+      headers: { 'user-key': process.env.ZOMATO_ACCESS_TOKEN } 
+    })
+      .then(res => this.setState({ data: res.data }))
+      .catch(err => console.log(err))
+
   }
 
   handleChange(e) {
