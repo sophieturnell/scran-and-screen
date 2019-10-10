@@ -21,7 +21,7 @@ class Home extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
-    this.handleClick = this.handleClick.bind(this)
+  
 
   }
 
@@ -34,11 +34,6 @@ class Home extends React.Component {
       .then(res => this.setState({ data: res.data }))
       .catch(err => console.log(err))
 
-  }
-
-  handleClick(entityId, entityType) {
-    this.setState({ Id: entityId, Type: entityType })
-      .then(() => this.props.history.push(`./TopScran${this.state.Id}_${this.state.Type}`))
   }
 
   handleChange(e) {
@@ -69,7 +64,7 @@ class Home extends React.Component {
             {this.state.data.location_suggestions.map(location => {
               return (
                 <div key={location.entity_id}>
-                  <Link to={`./TopScran_${location.entity_id}_${location.entity_type}`}>
+                  <Link to={`/TopScran:location_details?entity_id=${location.entity_id}&entity_type=${location.entity_type}`}>
                     {location.title}
                   </Link>
                 </div>
@@ -84,6 +79,7 @@ class Home extends React.Component {
   }
 
 }
+
 
 export default Home
 

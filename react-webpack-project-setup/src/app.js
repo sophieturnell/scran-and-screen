@@ -6,6 +6,7 @@ import 'bulma'
 import './style.scss'
 import Home from './components/common/Home'
 import TopScran from './components/common/TopScran'
+import ScranShow from './components/common/ScranShow'
 
 const App = () => (
   <BrowserRouter>
@@ -13,6 +14,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Home}/>
         <Route path="/TopScran:id" component={TopScran} />
+        <Route path="/ScranShow:id" component={ScranShow} />
       </Switch>
 
     </main>
