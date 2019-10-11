@@ -34,12 +34,13 @@ class TopScran extends React.Component {
       </header>
       
 
-      <div className="card-wrapper">
-        {this.state.restaurants.best_rated_restaurant.map((restaurant, i ) => (
-          <ScranCard key={i} {...restaurant} />
-        ))} 
-      </div>
-
+      <main>
+        <div className="card-wrapper">
+          {this.state.restaurants.best_rated_restaurant.map((restaurant, i ) => (
+            <ScranCard key={i} {...restaurant} />
+          ))} 
+        </div>
+      </main>
       </>
     )
   }

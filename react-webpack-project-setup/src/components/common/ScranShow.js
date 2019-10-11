@@ -46,14 +46,14 @@ class ScranShow extends React.Component {
             <div className="show-box">
               <div className="scran-box">
                 <img className="feature-image" src={this.state.restaurant.featured_image}/>
-                <h2>{this.state.restaurant.name}</h2>
+                <h3>{this.state.restaurant.name}</h3>
                 
                 <p>{this.state.restaurant.location.address}</p>
                 <p>{this.state.restaurant.timings}</p>
 
-                <div className="link-button">
-                  <a href={this.state.restaurant.url}>Go to Restaurant Website</a>
-                </div>
+                <button className="link-button">
+                  <a href={this.state.restaurant.url}>Go!</a>
+                </button>
               </div>
             </div>
 
@@ -78,7 +78,7 @@ class ScranShow extends React.Component {
               </div>
             </div>
 
-           
+    
 
           </div>
         </main>
