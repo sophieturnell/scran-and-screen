@@ -2,7 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-import 'bulma'
+// import 'bulma'
+
 
 class Home extends React.Component {
   constructor() {
@@ -21,7 +22,7 @@ class Home extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
-  
+
 
   }
 
@@ -45,35 +46,44 @@ class Home extends React.Component {
   render() {
     return (
       <>
-        <img src="#" alt="ScranAndScreenLogo"></img>
-        <p>Where would you like to eat?</p>
+        <div className="page-container">\
+          
+          <div className="logo-container">
+            
+            <img className="logo-image" src="./../assets/ScranAndScreenLogo.png" alt="ScranAndScreenLogo"></img>
 
-        <form onSubmit={this.handleSubmit}>
-          <input
-            className="search-box"
-            placeholder="Please enter the area you'd like to eat in"
-            onChange={this.handleChange}
-          >
-          </input>
+            <h1>Scran &amp; Screen</h1>
 
-          <button type="submit">Find!</button>
-        </form>
+            <h2>Tell us where you&#39;d like to eat and we&#39;ll find you a movie nearby</h2>
 
-        {(!this.state.data) ? null :
-          <div>
-            {this.state.data.location_suggestions.map(location => {
-              return (
-                <div key={location.entity_id}>
-                  <Link to={`/TopScran:location_details?entity_id=${location.entity_id}&entity_type=${location.entity_type}`}>
-                    {location.title}
-                  </Link>
-                </div>
-              )
-            })}
+            <form onSubmit={this.handleSubmit}>
+              <input
+                className="search-box"
+                placeholder="Please enter location here"
+                onChange={this.handleChange}
+              >
+              </input>
+
+              <button type="submit">Find!</button>
+            </form>
+
+            {(!this.state.data) ? null :
+              <div className="location-sug">
+                {this.state.data.location_suggestions.map(location => {
+                  return (
+                    <div key={location.entity_id}>
+                      <Link to={`/TopScran:location_details?entity_id=${location.entity_id}&entity_type=${location.entity_type}`}>
+                        {location.title}
+                      </Link>
+                    </div>
+                  )
+                })}
+              </div>
+            }
           </div>
-        }
+          
 
-
+        </div>
       </>
     )
   }

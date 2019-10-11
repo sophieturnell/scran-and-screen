@@ -1,1 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Merriweather', serif;
+  font-size: 20px;
+ 
+  
+}
+
+header {
+  display: flex;
+}
+
+.logo-image-header {
+  display: flex;
+  height: 60px;
+  width: 77.5px;
+  margin: 25px;
+}
+
+.location-sug {
+  border: solid grey 1px;
+}
+
+h1 {
+  font-family: 'Abril Fatface', cursive;
+  letter-spacing: 5px;
+  font-size: 82px;
+  margin: 25px;
+}
+
+h2 {
+ font-family: 'Merriweather', serif;
+ font-size: 20px;
+ margin: 5px;
+ text-align: center;
+}
+
+h3 {
+  font-family: 'Abril Fatface', cursive;
+  letter-spacing: 5px;
+  font-size: 50px;
+  margin: 25px;
+}
+
+p {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  margin:8px;
+  
+}
+
+a {
+  text-decoration: none;
+    color: black;
+}
+
+.logo-image{
+  max-height: 30%;
+  max-width: 20%;
+}
+
+
+.logo-container {
+  // background-color: antiquewhite;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-image {
+  // background-color: pink;
+  display: flex;
+  margin-top: 100px;
+}
+
+form {
+  margin: 40px;
+  
+}
+
+input {
+  // background-color: lightblue;
+  font-size: 20px;
+  align-content: center;
+}
+.search-box {
+  width: 350px;
+  height: 35px;
+  vertical-align: middle;
+}
+
+button {
+  background-color: grey;
+  width: 75px;
+  height: 40px;
+  vertical-align: middle;
+  margin-left: 5px;
+  font-size: 20px;
+  
+}
+
+div.card-wrapper {
+  // background-color: azure;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  flex-direction: row;
+  
+
+}
+
+div.card {
+border: solid black 1px;
+// background-color: pink;
+display: flex;
+width : 500px;
+height: 200px;
+justify-content: center;
+flex-grow: 1;
+margin: 10px;
+
+}
+
+.left-card {
+display: flex;
+
+}
+
+.right-card {
+display: flex;
+flex-direction: column;
+}
+
+.scran-screen {
+// background-color: azure;
+display: flex;
+justify-content: space-evenly;
+}
+
+.show-box {
+//  background-color: antiquewhite;
+ display: flex;
+ height: 600px;
+ width: 450px;
+ margin: 20px;
+ flex-direction: column;
+ flex-wrap: wrap;
+ border: solid grey 1px;
+ padding: 10px;
+
+}
+
+.scran-box {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  
+  
+}
+
+.link-button {
+  background-color: dodgerblue;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 200px;
+  height: 40px;
+   margin-left: 5px;
+  font-size: 15px;
+}
+
+.screen-box {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+ 
+}
+
+.feature-image {
+  display: flex;
+  max-width: auto;
+  max-height: 40%;
+}
 

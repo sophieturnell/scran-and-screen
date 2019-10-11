@@ -28,14 +28,18 @@ class TopScran extends React.Component {
     if (!this.state.restaurants) return null
     return (
       <>
-      <p>TopScran </p>
-      <div>
+      <header>
+        <img className="logo-image-header" src="./../assets/ScranAndScreenLogo.png" alt="ScranAndScreenLogo"></img>
+        <h3>Scran &amp; Screen</h3>
+      </header>
+      
+
+      <div className="card-wrapper">
         {this.state.restaurants.best_rated_restaurant.map((restaurant, i ) => (
           <ScranCard key={i} {...restaurant} />
         ))} 
-
-        
       </div>
+
       </>
     )
   }
