@@ -70,7 +70,7 @@ We started at 4pm on the Wednesday evening and quickly got to work deciding that
 
 It was important that both APIs would grant us access almost immediately and were free. We read the relevant documentation and applied for tokens. We experimented to see the responses various API requests would return when called in Insomnia. We drew up rough wireframes, drafted the API calls we planned to make and put together the logo.
 
-*Planning API calls*
+*Planning API calls*  
 <img src="https://imgur.com/ujQ9K6Y.jpg">
 
 
