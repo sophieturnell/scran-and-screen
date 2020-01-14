@@ -111,10 +111,11 @@ The importance of:
 - Working insomnia requests
 
 
+___
 
 
----
+www.linkedin.com/in/sophieturnell
+  
+www.sophieturnell.com
 
-linkedin.com/in/sophieturnell/
-
----
+___
