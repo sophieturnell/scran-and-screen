@@ -2,8 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-// import 'bulma'
-
 
 class Home extends React.Component {
   constructor() {
@@ -22,8 +20,6 @@ class Home extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
-
-
   }
 
   handleSubmit(e) {
@@ -34,22 +30,19 @@ class Home extends React.Component {
     })
       .then(res => this.setState({ data: res.data }))
       .catch(err => console.log(err))
-
   }
 
+  // SAVES INPUT TO QUERY TO BE USED IN THE GET REQUEST WHEN FORM IS SUBMITTED
   handleChange(e) {
     const query = e.target.value
     this.setState({ query })
-
   }
 
   render() {
     return (
       <>
         <div className="page-container">
-          
           <div className="logo-container">
-            
             <img className="logo-image" src="./../assets/ScranAndScreenLogo.png" alt="ScranAndScreenLogo"></img>
 
             <h1>Scran &amp; Screen</h1>
@@ -81,17 +74,11 @@ class Home extends React.Component {
               </div>
             }
           </div>
-          
-
         </div>
       </>
     )
   }
-
 }
 
 
 export default Home
-
-
-// axios.get('https://developers.zomato.com/api/v2.1/locations', e.target.value) 

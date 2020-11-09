@@ -1,6 +1,6 @@
 import React from 'react'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 
 class ScranShow extends React.Component {
@@ -14,6 +14,7 @@ class ScranShow extends React.Component {
 
   }
 
+  // LOADS API WITH CHOOSEN RESTAURANT DETAILS
   componentDidMount() {
     axios.get(`https://developers.zomato.com/api/v2.1/restaurant?res_id=${this.props.match.params.id}`, {
       headers: { 'user-key': process.env.ZOMATO_ACCESS_TOKEN }
@@ -27,16 +28,15 @@ class ScranShow extends React.Component {
       .then(res => (console.log(res)))
   }
 
-  
-  
-  
   render() {
     if (!this.state.restaurant) return null
-    // const { restaurant } = this.state.restaurant
+    const { restaurant } = this.state
     return (
       <>
         <header>
-          <img className="logo-image-header" src="./../assets/ScranAndScreenLogo.png" alt="ScranAndScreenLogo"></img>
+          <Link to={'/'}>
+            <img className="logo-image-header" src="./../assets/ScranAndScreenLogo.png" alt="ScranAndScreenLogo"></img>
+          </Link>
           <h3>Scran &amp; Screen</h3>
         </header>
 
@@ -45,14 +45,15 @@ class ScranShow extends React.Component {
 
             <div className="show-box">
               <div className="scran-box">
-                <img className="feature-image" src={this.state.restaurant.featured_image}/>
-                <h3>{this.state.restaurant.name}</h3>
-                
-                <p>{this.state.restaurant.location.address}</p>
-                <p>{this.state.restaurant.timings}</p>
+                <img className="feature-image" src={restaurant.featured_image}/>
+                <h3>{restaurant.name}</h3>
+                <h2>{restaurant.location.address}</h2>
+                <br></br>
+
+                <p className="paddedP">{restaurant.timings}</p>
 
                 <button className="link-button">
-                  <a href={this.state.restaurant.url}>Go!</a>
+                  <a href={restaurant.url}>Go!</a>
                 </button>
               </div>
             </div>
@@ -60,35 +61,33 @@ class ScranShow extends React.Component {
             <div className="show-box">
               <div className="screen-box">
                 <h2>Leicester Square, London, WC2H 7NA</h2>
-                <p>Tel: 0871 471 4714</p>
-                <p>Tube: Leicester Square</p>
-                <p>Price: Â£14.50-Â£24.50, concs Â£12.50-Â£18.50, family Â£54-Â£68, 3D Films add Â£1-Â£2.20, 3D glasses Â£1</p>
-                <p>Been there? Leave us a comment... </p>
-                <p>View Map </p>
-                <p>Note: Times shown are daily except where a day is shown. For example, Thu 5.30pm- means a showing at 5.30 on Thursday only. The weeks below run from the Friday to the following Thursday.</p>
-                <p>From Friday 4th October</p>
-                <p>To Thursday 10th October</p>
-                <p>Ad Astra</p>
-                <p>Fri-Sun/Tue/Wed/Thu 11:30 (Fri/Sat/Tue/Thu) 13:30 14:20 17:10 18:40 20:00 22:50 (Fri/Sat); Mon 20:00</p>
-                <p>Downton Abbey</p>
-                <p>Fri-Sun/Tue/Wed/Thu 10:50 (Fri/Sat/Tue-Thu) 13:40 18:50; Mon 18:50</p>
-                {/* <p>Hustlers</p>
-                <p>Fri-Sun/Tue/Wed/Thu 12:50 15:30 18:10 20:50; Mon 20:50</p> */}
+                <br></br>
+                <p><b>Tel:</b> 0871 471 4714</p>
+                <p><b>Tube:</b> Leicester Square</p>
+                <p><b>Price:</b> £14.50-£24.50, concs £12.50-£18.50, family £54-£68</p>
+                <p>3D Films add £1-£2.20, 3D glasses £1</p>
+                <p><i>Note: Times shown are daily except where a day is shown. For example, Thu 5.30pm- means a showing at 5.30 on Thursday only. The weeks below run from the Friday to the following Thursday.</i></p>
+                <br></br>
+                
+                <h2>From Friday 4th Oct to Thursday 10th Oct</h2>
+
+                <p><b><u>Mulan</u></b></p>
+                <p>Fri-Sun/Tue/Wed/Thu 11:30</p>
+                <p>(Fri/Sat/Tue/Thu) 13:30 14:20 17:10 18:40 20:00 22:50</p>
+                <p>(Fri/Sat); Mon 20:00</p>
+                <p><b><u>Tenet</u></b></p>
+                
+                <p>Fri-Sun/Tue/Wed/Thu 10:50</p>
+                <p>(Fri/Sat/Tue-Thu) 13:40 18:50;</p>
                 
               </div>
             </div>
-
-    
 
           </div>
         </main>
       </>
     )
   }
-
-
-
-
 
 }
 

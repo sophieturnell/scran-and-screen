@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
-import Home from './Home'
+
 import ScranCard from './ScranCard'
 
 class TopScran extends React.Component {
@@ -15,6 +16,7 @@ class TopScran extends React.Component {
 
   }
 
+  // PAGE LOADS WITH LOCATION BASED RESTAURANT RECS
   componentDidMount() {
     axios.get(`https://developers.zomato.com/api/v2.1/location_details${this.props.location.search}`, {
       headers: { 'user-key': process.env.ZOMATO_ACCESS_TOKEN }
@@ -29,7 +31,9 @@ class TopScran extends React.Component {
     return (
       <>
       <header>
-        <img className="logo-image-header" src="./../assets/ScranAndScreenLogo.png" alt="ScranAndScreenLogo"></img>
+        <Link to={'/'}>
+          <img className="logo-image-header" src="./../assets/ScranAndScreenLogo.png" alt="ScranAndScreenLogo"></img>
+        </Link>
         <h3>Scran &amp; Screen</h3>
       </header>
       

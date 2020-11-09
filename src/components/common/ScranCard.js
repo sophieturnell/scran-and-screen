@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom'
 
 const ScranCard = ({ restaurant }) => (
 
-
   <div>
-
     <Link to={`/ScranShow${restaurant.id}`}>
       <div className='card'>
 
@@ -22,7 +20,6 @@ const ScranCard = ({ restaurant }) => (
           <p>{restaurant.location.address}</p>
           {/* <a href="{restaurant.url}">Go to restaurant site</a> */}
         </div>
-       
         
       </div>
     </Link>
