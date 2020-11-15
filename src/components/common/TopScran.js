@@ -12,8 +12,6 @@ class TopScran extends React.Component {
     this.state = {
       restaurants: null
     }
-
-
   }
 
   // PAGE LOADS WITH LOCATION BASED RESTAURANT RECS
